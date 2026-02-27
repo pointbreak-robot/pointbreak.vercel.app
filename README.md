@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # circuitsurfers.github.io
 Circuit Surfers Robotics official website built with ❤️ and astro
 
