@@ -1,0 +1,31 @@
+---
+interface Props {
+    href: string;
+    icons: string;
+    alt: string;
+}
+
+const { href, icons, alt } = Astro.props;
+---
+
+<a href={href}>
+    <img src={"/assets/img/icons" + icons } alt={alt}>
+</a>
+
+<style>
+    img {
+        aspect-ratio: 1;
+        height: clamp(1rem, 7vw, 2rem); /* subject to change */
+    }
+    a {
+        height: 6vw;
+        transition: ease-in-out 0.15s;
+        height: clamp(1rem, 9vw, 2rem);
+    }
+    a > img {
+        transition: ease-in-out 0.15;
+    }
+    a:hover > img {
+        transform: translateY(0.5em) scale(1.1);
+    }
+</style>
