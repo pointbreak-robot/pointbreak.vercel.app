@@ -1,6 +1,6 @@
 {
     "buildCommand": "astro build",
-    "outputDirectory": "dist",
+    "outputDirectory": "public",
     "installCommand": "npm install",
     "framework": null
 }
