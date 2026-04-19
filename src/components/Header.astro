@@ -11,13 +11,13 @@
 
             <!-- socials -->
             <div class="socials">
-                <a href="https://instagram.com/circuitsurfersrobotics" target="_blank" aria-label="Instagram">
+                <a href="https://instagram.com/pointbreakrobot" target="_blank" aria-label="Instagram">
                     <img src={`${import.meta.env.BASE_URL}assets/img/icons/instagram.png`} alt="Instagram" />
                 </a>
-                <a href="https://youtube.com/@circuitsurfersrobotics" target="_blank" aria-label="YouTube">
+                <a href="https://youtube.com/@pointbreakrobot" target="_blank" aria-label="YouTube">
                     <img src={`${import.meta.env.BASE_URL}assets/img/icons/youtube.png`} alt="YouTube" />
                 </a>
-                <a href="https://github.com/circuitsurfers-robotics" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/pointbreak-robot" target="_blank" aria-label="GitHub">
                     <img src={`${import.meta.env.BASE_URL}assets/img/icons/github.svg`} alt="GitHub" />
                 </a>
                 <a href="https://robotevents.com/teams/V5RC/93332A" target="_blank" aria-label="VEX">
@@ -32,6 +32,7 @@
             <li><a href={`${import.meta.env.BASE_URL}main/home#team`}>Team</a></li>
             <li><a href={`${import.meta.env.BASE_URL}main/media`}>Media</a></li>
             <li><a href={`${import.meta.env.BASE_URL}main/donate`}>Donate</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}main/sponsors`}>Sponsors</a></li>
         </ul>
     </div>
 </nav>
@@ -43,9 +44,9 @@
         display: flex;
         align-items: center;
         overflow: visible;
-        background: linear-gradient(135deg, #0a1628, #38b6ff, #1a6fd4, #0a1628);
+        background: var(--rgb-bg-from);
         background-size: 400% 400%;
-        position: fixed;
+        position: absolute;
         top: 0;
         width: 100%;
         z-index: 999;
@@ -70,6 +71,7 @@
         width: 120px;
         height: auto;
         cursor: pointer;
+        margin-top: 15px;
     }
 
     .socials {
@@ -133,4 +135,6 @@
     .nav-links a:hover {
         color: #38b6ff;
     }
+
+    /* linear-gradient(135deg, #0a1628, #38b6ff, #1a6fd4, #0a1628) background for navbar just in case i want to change*/
 </style>

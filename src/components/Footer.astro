@@ -3,36 +3,54 @@ import IconLink from "./IconLink.astro";
 ---
 
 <footer>
-    <div>
-        <small>implemented with Astro:</small>
-        <IconLink icons="astro.png" href="https://astro.build/" alt="astroJS logo"/>
+    <div class="footer-top">
+        <div class="footer-item">
+            <small>implemented with Astro:</small>
+            <IconLink icons="astro.png" href="https://astro.build/" alt="astroJS logo"/>
+        </div>
+        <div class="footer-item">
+            <small>contact us:</small>
+            <IconLink icons="mail.svg" href="mailto:pointbreakrobot@gmail.com?subject = Feedback&body = message" alt="mail logo" imgClass="mail-icon"/>
+        </div>
     </div>
-    <div>
-        <small>contact us:</small>
-        <IconLink icons="mail.svg" href="mailto:circuitsurfers25@gmail.com?subject = Feedback&body = message" alt="mail logo" imgClass="mail-icon"/>
-    </div>
+    <small class="copyright">© 2026 Point Break Robotics - All Rights Reserved</small>
 </footer>
 
 <style>
     footer {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         margin: 0;
         gap: 1rem;
-        padding: 1rem;
+        padding: 2rem;
         background-color: var(--rgb-bg-from);
+    }
+
+    .footer-top {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .copyright {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+        text-align: center;
     }
 
     :global(.mail-icon) {
         margin-top: -0.2rem;
-    }
-
-    footer > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
     }
 </style>

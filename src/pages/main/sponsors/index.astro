@@ -1,0 +1,111 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import hackclub from "../../../../assets/img/icons/hackclub.png?url"
+---
+
+<Layout title="Point Break - Sponsors">
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="sponsors">SPONSORS</h1>
+            </div>
+        </section>
+        <section id="thankyou-note">
+            <h1>Thank You to Our Sponsors!</h1>
+            <p class="subtitle">Point Break Robotics would not exist without the generous support of our sponsors. Your contributions directly fund our competition fees, robot components, and travel, allowing us to focus on what we love: engineering, problem-solving, and competing at the highest level.</p><br>
+        </section>
+        <section id="sponsor-details">
+            <div class="fiscal-sponsor">
+                <span class="sponsor-sublabel">FISCAL SPONSOR</span>
+                <hr class="divider">
+                <!-- <a href="https://hackclub.com/" target="_blank">
+                    <img src={hackclub} alt="HackClub">
+                </a> 
+                <h2 class="sponsor-name">HACK CLUB</h2>
+                <p>Thank you to the HackClub Organization for accepting to become our fiscal sponsor.</p>
+            </div> -->
+            <hr class="divider">
+            <div class="other-sponsors">
+                <span class="sponsor-sublabel"></span>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    main {
+        padding-top: 0px;
+        margin: 0;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--rgb-bg-from);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        padding-top: 95px;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        width: 100%;
+    }
+
+    .sponsors {
+        font-size: clamp(2rem, 6vw, 5rem);
+        white-space: nowrap;
+        font-weight: 900;
+        color: white;
+        text-transform: uppercase;
+        margin: 0;
+        letter-spacing: 2px;
+    }
+
+    #thankyou-note {
+        text-align: center;
+        padding: 4rem 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    #sponsor-details {
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .subtitle {
+        color: white;
+        max-width: 900px;
+        margin: 1rem auto 3rem auto;
+        line-height: 1.8;
+        font-size: 1.2rem;
+    }
+
+    .sponsor-sublabel {
+        display: block;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .divider {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+        margin: 3rem 0;
+    }
+</style>

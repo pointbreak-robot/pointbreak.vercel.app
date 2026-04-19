@@ -6,20 +6,23 @@ interface Props {
 const { title } = Astro.props;
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro";
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="keywords" content="circuit, surfers, circuitsurfers, vex, robotics">
-        <meta name="author" content="Circuit Surfers">
+        <meta name="keywords" content="point, break, pointbreak, vex, robotics">
+        <meta name="author" content="Point Break">
         <meta name="viewport" content="width=device-width">
-        <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.png`}>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/ico" href="/favicon.ico" transition:persist/>
         <meta name="generator" content={Astro.generator} />
         <link rel="preload" href={`${import.meta.env.BASE_URL}assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf`} as="font" type="font/ttf" crossorigin>
         <link rel="preload" href={`${import.meta.env.BASE_URL}assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf`} as="font" type="font/ttf" crossorigin>
         <script src="/assets/js/konami_code.js" is:inline></script>
+        <ClientRouter />
         <title>{title}</title>
         <slot name="head"/>
     </head>
@@ -80,10 +83,38 @@ import Header from "../components/Header.astro";
         background-color: transparent;
     }
 
+    .wave-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .wave-bg svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     body {
         margin: 0;
         padding: 0;
         width: 100vw;
+        min-height: 100vh;
+        position: relative;
         background: var(--rgb-bg-from);
     }
 
@@ -118,3 +149,16 @@ import Header from "../components/Header.astro";
     }
 
 </style>
+
+<script>
+    import { addWaves } from '../scripts/waves.js'
+    import { initFadeIn } from '../scripts/fadeIn.js'
+
+    function init() {
+        addWaves();
+        initFadeIn();
+    }
+
+    document.addEventListener('astro:page-load', init);
+    document.addEventListener('DOMContentLoaded', init);
+</script>

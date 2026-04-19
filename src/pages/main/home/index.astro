@@ -1,81 +1,88 @@
 ---
 import Layout from "../../../layouts/Layout.astro"
----
+---../../../scripts/waves.js
 
-<Layout title="Circuit Surfers">
+<Layout title="Point Break">
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1 class="circuit"><span class="accent">CIRCUIT</span> SURFERS</h1>
+                <h1 class="point"><span class="accent">POINT</span> BREAK 🏄‍♂️</h1>
             </div>
         </section>
-        <section id="about">
+        <section id="about" class="fade-in">
             <h1>About Us</h1>
-            <p>Circuit Surfers is an independent high school VEX V5 robotics team based in Fremont, California. We are a passionate group of student engineers, programmers, and designers dedicated to pushing the boundaries of competitive robotics. Competing in the VEX V5 Robotics Competition, we combine technical expertise with creative problem-solving to design, build, and program robots capable of taking on the world's best teams. Our mission is to foster a love for STEM, develop real-world engineering skills, and represent our community on the competitive stage.</p>
+            <p>Point Break Robotics is an independent high school VEX V5 robotics team based in Fremont, California. We are a passionate group of student engineers, programmers, and designers dedicated to pushing the boundaries of competitive robotics. Competing in the VEX V5 Robotics Competition, we combine technical expertise with creative problem-solving to design, build, and program robots capable of taking on the world's best teams. Our mission is to foster a love for STEM, develop real-world engineering skills, and represent our community on the competitive stage.</p>
             <div class="team-photo-box">
                 <!-- replace -->
             </div>
         </section>
-        <section id="team">
-            <h1>Team</h1>
+        <hr class="section-divider">
+        <section id="track" class="fade-in">
+            <h1>Track Records</h1>
+            <div class="season-card1">
+                <div class="szn-label">Override Season</div>
+                <div class="szn-content">
+                    <div class="szn-record">
+                        <span class="szn-sublabel">RECORD</span>
+                        <p class="record">0-0-0</p>
+                    </div>
+                    <div class="szn-divider"></div>
+                    <div class="szn-awards">
+                        <span class="szn-sublabel">AWARDS</span>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="section-divider">
+        <section id="team" class="fade-in">
+            <h1>Meet The Team</h1>
             <div class="team-grid">
                 <div class="member">
-                    <div class="photo-circle">
-                        <!-- sriman photo source -->
-                    </div>
+                    <div class="photo-circle"></div>
                     <h3>SRIMAN SREEPATHI</h3>
-                    <li>Programming Lead</li>
+                    <li>Programming Team</li>
                     <li>Hardware Team</li>
                     <li>Notebook Lead</li>
                 </div>
                 <div class="member">
-                    <div class="photo-circle">
-                        <!-- pranav photo source -->
-                    </div>
+                    <div class="photo-circle"></div>
                     <h3>PRANAV PYDI</h3>
-                    <li>Hardware & CAD Lead</li>
+                    <li>Hardware & CAD Team</li>
                     <li>Programming Team</li>
                     <li>Notebook Assist</li>
                 </div>
                 <div class="member">
-                    <div class="photo-circle">
-                        <!-- twanshu photo source -->
-                    </div>
+                    <div class="photo-circle"></div>
                     <h3>TWANSHU KHATRI</h3>
                     <li>Driver</li>
                     <li>Hardware Team</li>
                     <li>Notebook Assist</li>
                 </div>
                 <div class="member">
-                    <div class="photo-circle">
-                        <!-- justin photo source -->
-                    </div>
+                    <div class="photo-circle"></div>
                     <h3>JUSTIN GAO</h3>
                     <li>Hardware Team</li>
                     <li>Notebook Team</li>
                 </div>
                 <div class="member">
-                    <div class="photo-circle">
-                        <!-- abhi photo source -->
-                    </div>
+                    <div class="photo-circle"></div>
                     <h3>ABHI GHOSH</h3>
                     <li>Hardware Team</li>
                     <li>Notebook Assist</li>
                     <li>Media</li>
                 </div>
                 <div class="member">
-                    <div class="photo-circle">
-                        <!-- dev photo source -->
-                    </div>
+                    <div class="photo-circle"></div>
                     <h3>DEV BHATT</h3>
                     <li>Programming Team</li>
                     <li>Notebook Assist</li>
                     <li>Hardware Team</li>
                 </div>
                 <div class="member last">
-                    <div class="photo-circle">
-                        <!-- matthew photo source -->
-                    </div>
+                    <div class="photo-circle"></div>
                     <h3>MATTHEW HO</h3>
                     <li>Hardware Team</li>
                     <li>Programming Team</li>
@@ -91,6 +98,7 @@ import Layout from "../../../layouts/Layout.astro"
         padding-top: 0;
         margin: 0;
         gap: 10rem;
+        position: relative;
     }
 
     .hero {
@@ -114,8 +122,8 @@ import Layout from "../../../layouts/Layout.astro"
         width: 100%;
     }
 
-    .circuit {
-        font-size: clamp(2rem, 6vw, 5rem);
+    .point {
+        font-size: clamp(2rem, 7vw, 5rem);
         white-space: nowrap;
         font-weight: 900;
         color: white;
@@ -133,6 +141,8 @@ import Layout from "../../../layouts/Layout.astro"
         border-radius: 16px;
         scroll-margin-top: 105px;
         box-sizing: border-box;
+        position: relative;
+        z-index: 1;
     }
 
     #about p, #team p {
@@ -145,6 +155,104 @@ import Layout from "../../../layouts/Layout.astro"
     #about p {
         padding-left: 2.5rem;
         font-size: 20px;
+    }
+
+    #track {
+        padding: 0rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    #track h1 {
+        font-size: 60px;
+        padding-left: 2rem;
+        margin: 0;
+    }
+
+    .season-card1 {
+        width: 100%;
+        box-sizing: border-box;
+        border-left: 6px solid var(--rgb-accent-to);
+        border-right: 6px solid var(--rgb-accent-to);
+        padding: 3rem 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .szn-label {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #38b6ff;
+    }
+
+    .section-divider {
+        border: none;
+        border-top: 5px solid var(--rgb-accent-from);
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .szn-content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    .szn-record {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        gap: 0.5rem;
+    }
+
+    .szn-sublabel {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .record {
+        font-size: 4rem;
+        font-weight: 700;
+        padding-top: 3rem;
+        color: #38b6ff;
+        margin: 0;
+        letter-spacing: 2px;
+    }
+
+    .szn-divider {
+        width: 1px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 0 2rem;
+    }
+
+    .szn-awards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        gap: 0.4rem;
+    }
+
+    .szn-awards p {
+        font-size: 1.5rem;
+        color: #38b6ff;
+        margin: 0;
+        line-height: 1.6;
     }
 
     .team-grid {
@@ -195,6 +303,17 @@ import Layout from "../../../layouts/Layout.astro"
         line-height: 1.4;
     }
 
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     @media (max-width: 768px) {
         .team-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -211,3 +330,4 @@ import Layout from "../../../layouts/Layout.astro"
         color: #38b6ff;
     }
 </style>
+
